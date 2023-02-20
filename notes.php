@@ -1,22 +1,28 @@
 <?php
+
+require('pdo.php');
+
 $notes = [];
+
 @$note = $_POST['note'];
-if (isset($note)){
-    $note = trim($note);
-    if (strlen($note) == 0){
+@$time = date('Y-m-d H:i:s');
+@$status = '0';
+
+if (isset($note)) {
+    if (strlen($note) == 0) {
         die('Note is required');
     }
-    if (strlen($note) > 100){
+    if (strlen($note) > 100) {
         die('Note is too long');
-    }else{
-        array_push($notes, $note);
+    } else {
+        $sql = "insert into notes (note, time, status) values (:note, :time, :status)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(
+            array(
+                ':note' => $_POST['note'],
+                ':time' => $time,
+                ':status' => $status
+            )
+        );
     }
-}
-
-var_dump($notes);
-
-foreach ($notes as $note) {
-    echo "<ul>
-    <li>$note</li></ul>
-    <li><a href='index.php'>Back to index</a></li>";
 }
