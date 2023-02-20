@@ -1,4 +1,25 @@
 <?php
-echo "بسم الله الرحمن الرحيم";
-echo "ah";
-echo "al";
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+</head>
+<body>
+    <h1>Notes</h1>
+    <p>
+        <a href="notes.php">Your Notes</a>
+    </p>
+    <form action="notes.php" method="POST">
+        <input type="text" name="note" placeholder="Type Your Note Here ...">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
