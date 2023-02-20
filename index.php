@@ -21,7 +21,7 @@
     </p>
     <form action="notes.php" method="POST">
         <input type="text" name="note" placeholder="Type Your Note Here ...">
-        <input type="hidden" name="time">
+        <!-- <input type="hidden" name="time"> -->
         <input type="submit" value="submit">
     </form>
 </body>
