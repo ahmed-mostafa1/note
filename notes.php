@@ -68,13 +68,14 @@ foreach ($results as $result) {
             <tbody>
                 <?php
                 foreach ($results as $result) {
+                    $id = $result['id'];
                     $n = $result['note'];
                     $t = $result['time'];
-                    $s = $result['status'] = "<a href='Drop'> Done </a>";
+                    
                     echo '<tr>;';
                     echo '<td>' . $n . '</td>';
                     echo '<td>' . $t . '</td>';
-                    echo '<td>' . $s . '</td>';
+                    echo '<td>' . '<a href="delete.php?id='.$result['id'].'">Done</a>' . '</td>';
                     echo '</tr>';
                 } ?>
             </tbody>
